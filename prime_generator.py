@@ -6,7 +6,7 @@ def make_n_primes(n):
 		print "Now evaluating %d" % num
 		for i in primes:
 			if num % i == 0:
-				print "%d is a multple of %d and is not a prime" % (num, i)
+				print "%d has a prime factor of %d and is not a prime" % (num, i)
 				num = num + 1
 				prime_stat = "no"
 				break
