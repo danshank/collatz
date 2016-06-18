@@ -1,4 +1,6 @@
-from prime_generator import make_n_primes
+from primes import make_n_primes
+from primes import prime_decomp
+
 
 def collatz_game(n):
 	count = 0
@@ -15,7 +17,14 @@ def collatz_game(n):
 			print "terminating game early"
 	return route
 
-def route_decomp(route):
-	
+def route_decomp(route, prime_list):
+	decomp = []
 	for stop in route:
-		prime_decomp(stop, primes)
+		decomp.append(prime_decomp(stop, prime_list))
+	return decomp
+
+prime_list = make_n_primes(1000)
+path = collatz_game(700)
+path_decomp = route_decomp(path, prime_list)
+print path
+print path_decomp
